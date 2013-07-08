@@ -20,6 +20,7 @@ $request_time = time();
 
 // waiting for data file is updated.
 while ((time() - $request_time) < $max_waittime) {
+	clearstatcache();
 	if ($cache->mtime($db_filename) > $request_time) {
 		break;
 	}
