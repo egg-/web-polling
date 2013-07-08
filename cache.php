@@ -7,7 +7,7 @@ class Cache {
 	private $__path_cache = null;
 	private $__uselock = true;
 
-	public function Hands_Cache($path = null, $uselock = true)
+	public function Cache($path = null, $uselock = true)
 	{
 		$this->__path_cache = $path !== null ? $path : '';
 		$this->__uselock = $uselock;
