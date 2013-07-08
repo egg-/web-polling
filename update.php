@@ -3,8 +3,8 @@
  * update db file.
  */
 
-require_once 'func.php';
-require_once 'cache.php';
+require_once 'lib/func.php';
+require_once 'lib/cache.php';
 
 $db_path = dirname($_SERVER['SCRIPT_FILENAME']).'/var/';
 $db_filename = 'db.json';
