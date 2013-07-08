@@ -1,6 +1,13 @@
+Web/LongPolling
+================================
+
 this is long polling test page.
 
-apis
+##Apis
+
 - state.php : response current data.
 - update.php : update new data.
- - http://www.getpostman.com/collections/12eaa00211f271f5fac9
+
+##Postman Link
+
+- http://www.getpostman.com/collections/12eaa00211f271f5fac9
