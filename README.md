@@ -1,21 +1,30 @@
-web-longpolling
-================================
+# web-polling
 
-this is long polling test page.
+this is polling test page.
 
-##API
+## API
 
 - state.php : response current data.
 - update.php : update new data.
 
-##Postman
+## Postman
 
 - http://www.getpostman.com/collections/12eaa00211f271f5fac9
 
-##$longpolling
+## $polling
 
-$longpolling.start('user defined unique id', {
+`// change the default settings.
+$polling.setting({
+	longpolling: false,
+	timeout: 30000,
+	interval: 3000
+});
+
+// start polling
+$polling.start('user defined unique id', {
 	url: 'server api url for long polling',
 	// ...
 });
-$longpolling.stop('user defined unique id');
+
+// stop polling
+$polling.stop('user defined unique id');`
