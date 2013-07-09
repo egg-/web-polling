@@ -18,6 +18,8 @@ $cache->path($db_filename) or $cache->save($db_filename, "{}", false);	// no ser
 $max_waittime = 30;
 $request_time = time();
 
+set_time_limit($max_waittime + 5);
+
 // waiting for data file is updated.
 while ((time() - $request_time) < $max_waittime) {
 	clearstatcache();
