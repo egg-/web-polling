@@ -13,7 +13,8 @@ this is polling test page.
 
 ## $polling
 
-`// change the default settings.
+```js
+// change the default settings.
 $polling.setting({
 	longpolling: false,
 	timeout: 30000,
@@ -27,4 +28,5 @@ $polling.start('user defined unique id', {
 });
 
 // stop polling
-$polling.stop('user defined unique id');`
+$polling.stop('user defined unique id');
+```
