@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Javascript Long Polling Sample</title>
+	<title>Javascript Polling Sample</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 	fieldset {
@@ -15,10 +15,10 @@
 	}
 	</style>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script type="text/javascript" src="js/longpolling.js"></script>
+	<script type="text/javascript" src="js/polling.js"></script>
 </head>
 <body>
-	<h1>Javascript Long Polling Sample</h1>
+	<h1>Javascript Polling Sample</h1>
 
 	<button class="polling">Start</button>
 	<fieldset>
@@ -30,7 +30,7 @@
 
 	<script type="text/javascript">
 	$(document.body).ready(function() {
-		var uuid = 'test-longpolling';
+		var uuid = 'test-polling';
 		var update_result = function(txt) {
 			var cal = new Date();
 			var t = function(n) {
@@ -43,7 +43,8 @@
 		// start/stop polling
 		$('button.polling').click(function() {
 			if ($(this).text() == 'Start') {
-				$longpolling.start(uuid, {
+				$polling.setting({ longpolling: true });
+				$polling.start(uuid, {
 					url: 'state.php',
 					dataType: 'json',
 					success: function(res, status, xhr) {
@@ -55,7 +56,7 @@
 				});
 				$(this).text('Stop');
 			} else {
-				$longpolling.stop(uuid);
+				$polling.stop(uuid);
 				$(this).text('Start');
 			}
 		});

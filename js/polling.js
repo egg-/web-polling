@@ -21,7 +21,7 @@ var $polling = (function($) {
 	 * @param {object} opt
 	 */
 	module.setting = function(opt) {
-		setting = $.extend(setting, opt);
+		settings = $.extend(settings, opt);
 	};
 
 	/**
@@ -37,7 +37,7 @@ var $polling = (function($) {
 		
 		// reset
 		maps[uid] = true;
-		opt = $.extend(setting, opt);
+		opt = $.extend(settings, opt);
 
 		// @ref
 		// http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery
@@ -51,7 +51,7 @@ var $polling = (function($) {
 				complete: function(xhr, status) {
 					origin_complete(xhr, status);
 					
-					if (status != 'abort') {
+					if (status == 'abort') {
 						return true;
 					}
 
